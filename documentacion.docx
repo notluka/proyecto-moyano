@@ -1,0 +1,42 @@
+Documentación del Proyecto: Administrador de Consumo
+El Administrador de Consumo es una aplicación web diseñada para gestionar y visualizar el consumo de productos como panchos, hamburguesas, papas y Coca-Cola. Permite realizar un seguimiento de las cantidades vendidas y visualizar los datos en forma de gráficas.
+
+Componentes del Proyecto
+El proyecto consta de los siguientes componentes principales:
+
+Index (index.html): La página de inicio del proyecto que muestra una lista de productos disponibles. Cada producto está representado por una imagen y un enlace que redirige a la página correspondiente.
+
+Página de Producto (panchos.html, hamburguesas.html, papas.html, cocacola.html): Cada página de producto muestra una gráfica con el consumo registrado para ese producto en diferentes meses. También proporciona la opción de modificar los datos existentes.
+
+Estilos CSS (styles.css): Archivo CSS que define el estilo y la apariencia de todas las páginas del proyecto. Incluye reglas para el diseño, colores, fuentes y otros elementos visuales.
+
+JavaScript (panchos.js, hamburguesas.js, papas.js, cocacola.js): Archivos JavaScript correspondientes a cada página de producto. Contienen la lógica necesaria para modificar los datos de consumo y actualizar la gráfica en tiempo real.
+
+Header (header.html): Un archivo HTML separado que define un encabezado común para todas las páginas de producto. Incluye una barra de navegación que permite acceder rápidamente a otros productos.
+
+Funcionalidad
+El Administrador de Consumo ofrece las siguientes funcionalidades:
+
+Visualización de Gráficas: Cada página de producto muestra una gráfica que representa el consumo registrado para ese producto en diferentes meses. La gráfica se genera utilizando la biblioteca Chart.js.
+
+Modificación de Datos: En cada página de producto, se proporciona un formulario que permite al usuario ingresar un mes y una cantidad para modificar los datos de consumo existentes. La gráfica se actualiza automáticamente cuando se realiza una modificación.
+
+Barra de Acceso Rápido: Todas las páginas de producto incluyen un encabezado común con una barra de navegación que permite acceder rápidamente a otros productos. Esto facilita la navegación entre las diferentes páginas del proyecto.
+
+Requisitos del Sistema
+El proyecto del Administrador de Consumo tiene los siguientes requisitos del sistema:
+
+Un navegador web moderno compatible con HTML5, CSS3 y JavaScript.
+Conexión a Internet para cargar bibliotecas externas (Chart.js) y archivos adicionales.
+Configuración y Uso
+Descarga los archivos del proyecto en tu directorio de trabajo local.
+
+Asegúrate de que los archivos HTML, CSS y JavaScript estén en la misma ubicación o directorio.
+
+Abre cualquier página de producto (por ejemplo, panchos.html) en un navegador web compatible.
+
+Verás la gráfica del producto y un formulario para modificar los datos de consumo.
+
+Selecciona un mes, ingresa una cantidad y haz clic en el botón "Modificar" para actualizar los datos.
+
+Explora las diferentes páginas de producto utilizando la barra de navegación

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coca-Cola</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="cocacola.js"></script>
+</head>
+
+<body>
+    
+    <header>
+  <nav>
+    <ul>
+      <li><a href="panchos.html">Panchos</a></li>
+      <li><a href="hamburguesas.html">Hamburguesas</a></li>
+      <li><a href="papas.html">Papas</a></li>
+      <!--<li><a href="cocacola.html">Coca-Cola</a></li>-->
+    </ul>
+  </nav>
+</header>
+
+    
+  <h1>Coca-Cola</h1>
+  <div class="chart-container">
+    <canvas id="cocacola-chart"></canvas>
+  </div>
+
+  <div>
+    <h2>Modificar datos</h2>
+    <label for="select-month">Mes:</label>
+    <select id="select-month">
+      <option value="">Seleccione un mes</option>
+      <option value="Enero">Enero</option>
+      <option value="Febrero">Febrero</option>
+      <option value="Marzo">Marzo</option>
+      <option value="Abril">Abril</option>
+      <option value="Mayo">Mayo</option>
+      <option value="Junio">Junio</option>
+    </select>
+
+    <label for="input-quantity">Cantidad de Coca-Cola:</label>
+    <input type="number" id="input-quantity" placeholder="Ej. 50">
+
+    <button onclick="updateData()">Modificar</button>
+  </div>
+
+  <script>
+    // Datos iniciales para Coca-Cola
+    var initialData = {
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+      datasets: [{
+        label: 'Cantidad de Coca-Cola',
+        data: [20, 30, 25, 40, 35, 50],
+        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    var config = {
+      type: 'bar',
+      data: initialData,
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    var ctx = document.getElementById('cocacola-chart').getContext('2d');
+    var chart = new Chart(ctx, config);
+
+    // Función para modificar los datos de la gráfica
+    function updateData() {
+      var monthSelect = document.getElementById('select-month');
+      var quantityInput = document.getElementById('input-quantity');
+      var month = monthSelect.value;
+      var quantity = parseInt(quantityInput.value);
+
+      if (month === "") {
+        alert("Por favor, seleccione un mes.");
+        return;
+      }
+
+      if (isNaN(quantity)) {
+        alert("Por favor, ingrese una cantidad válida.");
+        return;
+      }
+
+      var index = config.data.labels.indexOf(month);
+
+      if (index !== -1) {
+        config.data.datasets[0].data[index] = quantity;
+        chart.update();
+      }
+
+      // Limpiar los campos de entrada
+      monthSelect.value = '';
+      quantityInput.value = '';
+    }
+  </script>
+</body>
+</html>
